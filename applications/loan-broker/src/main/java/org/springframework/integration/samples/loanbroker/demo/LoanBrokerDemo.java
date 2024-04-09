@@ -36,7 +36,9 @@ public class LoanBrokerDemo {
 	private static final Log logger = LogFactory.getLog(LoanBrokerDemo.class);
 
 	public static void main(String[] args) {
+		System.out.println("text1");
 		new LoanBrokerDemo().runDemo();
+		System.out.println("text2");
 	}
 
 	public void runDemo() {
