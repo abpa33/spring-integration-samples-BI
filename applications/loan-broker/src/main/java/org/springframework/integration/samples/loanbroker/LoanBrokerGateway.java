@@ -18,6 +18,7 @@ package org.springframework.integration.samples.loanbroker;
 
 import java.util.List;
 
+import org.springframework.integration.annotation.MessagingGateway;
 import org.springframework.integration.samples.loanbroker.domain.LoanQuote;
 import org.springframework.integration.samples.loanbroker.domain.LoanRequest;
 
@@ -29,8 +30,12 @@ import org.springframework.integration.samples.loanbroker.domain.LoanRequest;
  * @author Gunnar Hillert
  *
  */
+@MessagingGateway
 public interface LoanBrokerGateway {
 
+
+	@Gateway(requestChannel = "loanRequestChannel")
+    void processLoanRequest(LoanRequest request);
 	/**
 	 * Will return the best {@link LoanQuote} for the given request.
 	 */
