@@ -48,10 +48,10 @@ public class LoanBrokerDemo {
 		LoanRequest loanRequest = new LoanRequest();
 		loanRequest.setCustomer(new Customer());
 		LoanQuote loan = broker.getBestLoanQuote(loanRequest);
-		logger.info("********* Best Quote *********\n" + loan);
+		System.out.println("********* Best Quote *********\n" + loan);
 		System.out.println("==============================");
 		List<LoanQuote> loanQuotes = broker.getAllLoanQuotes(loanRequest);
-		logger.info("********* All Quotes *********");
+		System.out.println("********* All Quotes *********");
 		for (LoanQuote loanQuote : loanQuotes) {
 			logger.info(loanQuote);
 		}
